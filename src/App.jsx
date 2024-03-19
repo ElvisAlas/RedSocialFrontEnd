@@ -7,7 +7,7 @@ const App = () => {
   const [usuario, setUsuario] = useState('');
 
   const handleLogin = (username) => {
-    setUsuario(username); // Establecer el nombre de usuario en el estado
+    setUsuario(username); 
   };
 
   return (

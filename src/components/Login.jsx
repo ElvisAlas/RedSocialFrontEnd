@@ -23,9 +23,12 @@ function Login({ onLogin }) {
       const response = await axios.get(`http://localhost:4000/api/validarUsuario/${dataForm.nombre_usuario}/${dataForm.pass}`);
       const data = response.data;
       console.log(data)
+
       if (data.success) {
-        onLogin(dataForm.nombre_usuario); // Pasar el nombre de usuario al componente padre
+        localStorage.setItem('nombre_usuario', dataForm.nombre_usuario);
+        onLogin(dataForm.nombre_usuario); 
         navigate('/publicaciones');
+
       } else {
         Swal.fire({
           icon: 'error',
